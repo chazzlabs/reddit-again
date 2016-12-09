@@ -17,9 +17,7 @@ export default class SubredditChooser extends React.Component {
     }
 
     _selectOption(event) {
-        const selected = this.state.selected;
-        selected.id = event.target.value;
-        this.setState({ selected: selected });
+        this.setState({ selected: { id: event.target.value } });
         this.props.onSelect(event.target.value);
     }
 

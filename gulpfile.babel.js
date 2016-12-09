@@ -68,11 +68,11 @@ gulp.task('serve', ['transpile', 'html', 'css'], () => sync.init({
 }));
 
 gulp.task('js-watch', ['transpile'], () => sync.reload());
-gulp.task('sass-watch', ['sass'], () => sync.reload());
+gulp.task('css-watch', ['css'], () => sync.reload());
 gulp.task('html-watch', ['html'], () => sync.reload());
 
 gulp.task('watch', ['serve'], () => {
     gulp.watch('src/**/*.html', ['html-watch']);
     gulp.watch('src/**/*.js', ['js-watch']);
-    gulp.watch('./src/**/*.scss', ['sass-watch']);
+    gulp.watch('./src/**/*.scss', ['css-watch']);
 });

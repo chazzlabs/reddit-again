@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 
 import SubredditChooser from './subreddit-chooser';
+import ThreadLink from './thread-link';
 
 export default class RedditAgain extends React.Component {
 
@@ -9,11 +10,12 @@ export default class RedditAgain extends React.Component {
         super();
 
         this.state = {
-            listings: []
+            listings: [],
+            links: []
         };
     }
 
-    componentDidMount() {
+    _getSubreddits() {
         $.ajax({
             url: 'https://www.reddit.com/reddits.json',
             success: (response) => {
@@ -22,16 +24,33 @@ export default class RedditAgain extends React.Component {
         });
     }
 
+    _getLinks(subreddit) {
+        $.ajax({
+            url: `https://www.reddit.com/r/${subreddit}.json`,
+            success: (response) => {
+                this.setState({ links: response.data.children });
+            }
+        });
+    }
+
     _onSelect(selectedId) {
         if (selectedId !== 'default') {
-            console.log(this.state.listings.find(listing => listing.data.id === selectedId ));
+            this._getLinks(this.state.listings.find(listing => listing.data.id === selectedId ).data.display_name);
         }
+    }
+
+    componentDidMount() {
+        this._getSubreddits();
     }
 
     render() {
         return(
             <div>
                 <SubredditChooser listings={this.state.listings} onSelect={this._onSelect.bind(this)}/>
+
+                <div>
+                    {this.state.links.map(link => <ThreadLink key={link.data.id} link={link} />)}
+                </div>
             </div>
         );
     }

@@ -1,10 +1,52 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+@import 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500';
+
+$font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+$font-color: #6d6d6d;
 $background-color: #e5e5e5;
+$anchor-color: #960028;
 
 html, body {
     margin: 0;
-    padding: 0;
 }
 
 body {
     background-color: $background-color;
+    font-family: $font-family;
+    color: $font-color;
+    line-height: 1.5;
+    padding: 2em 1em;
+}
+
+#reddit-again {
+    max-width: 80em;
+
+    .thread-link {
+        background-color: darken($background-color, 5%);
+        margin: 1.5em;
+        padding: 1.5em;
+
+        .title {
+
+            &.sticky {
+                font-weight: bold;
+            }
+
+        }
+
+        .meta-data {
+            font-size: .8em;
+
+            a {
+                color: $anchor-color;
+                margin-right: .75em;
+            }
+        }
+    }
+
+}
+
+.card {
+    border-radius: 2px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
 }

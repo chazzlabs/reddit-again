@@ -5,8 +5,8 @@ import $ from 'jquery';
 import RedditAgain from './components/reddit-again';
 
 $(function() {
-  ReactDOM.render(
-    <RedditAgain />,
-    document.getElementById('reddit-again')
-  );
+    ReactDOM.render(
+        <RedditAgain />,
+        document.getElementById('reddit-again')
+    );
 })
