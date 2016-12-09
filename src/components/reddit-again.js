@@ -34,9 +34,7 @@ export default class RedditAgain extends React.Component {
     }
 
     _onSelect(selectedId) {
-        if (selectedId !== 'default') {
-            this._getLinks(this.state.listings.find(listing => listing.data.id === selectedId ).data.display_name);
-        }
+        this._getLinks(this.state.listings.find(listing => listing.data.id === selectedId ).data.display_name);
     }
 
     componentDidMount() {
