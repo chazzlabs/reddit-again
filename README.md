@@ -1,15 +1,10 @@
-# React Boilerplate
+# Reddit Again
 
-A simple boilerplate for creating a React app quickly.
+This is a silly Reddit client built for learning React.
 
-_Be sure to search for and change the following throughout the application:_
-
-* `React Boilerplate`, `ReactBoilerplate`, `react-boilerplate`
-* `MyComponent`, `my-component`
-
-
-# Installing
+# Installing and Running Locally
 
 1. Clone the repo
-3. `npm install -g gulp` to install Gulp globally.
-4. `npm install` to resolve project dependencies.
+2. `npm install -g gulp` to install Gulp globally.
+3. `npm install` to resolve project dependencies.
+4. `npm start` to run the local server
