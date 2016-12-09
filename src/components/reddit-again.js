@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 
 import SubredditChooser from './subreddit-chooser';
-import ThreadLink from './thread-link';
+import ThreadList from './thread-list';
 
 export default class RedditAgain extends React.Component {
 
@@ -45,10 +45,7 @@ export default class RedditAgain extends React.Component {
         return(
             <div>
                 <SubredditChooser listings={this.state.listings} onSelect={this._onSelect.bind(this)}/>
-
-                <div>
-                    {this.state.links.map(link => <ThreadLink key={link.data.id} link={link} />)}
-                </div>
+                <ThreadList links={this.state.links} />
             </div>
         );
     }

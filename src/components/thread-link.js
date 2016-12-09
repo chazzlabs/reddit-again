@@ -3,12 +3,6 @@ import moment from 'moment';
 
 export default class ThreadLink extends React.Component {
 
-    constructor() {
-        super();
-
-        this.state = {};
-    }
-
     _getFormattedTime(timestamp) {
         return moment.unix(timestamp).fromNow();
     }
