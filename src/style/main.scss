@@ -25,6 +25,7 @@ body {
         background-color: darken($background-color, 5%);
         margin: 1.5em;
         padding: 1.5em;
+        cursor: pointer;
 
         .title {
             font-family: 'Roboto Slab', serif;
