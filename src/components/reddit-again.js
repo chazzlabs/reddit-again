@@ -1,8 +1,9 @@
 import React from 'react';
-import $ from 'jquery';
 
 import SubredditChooser from './subreddit-chooser';
 import ThreadList from './thread-list';
+
+import { requestService } from '../services/request-service';
 
 export default class RedditAgain extends React.Component {
 
@@ -15,30 +16,18 @@ export default class RedditAgain extends React.Component {
         };
     }
 
-    _getSubreddits() {
-        $.ajax({
-            url: 'https://www.reddit.com/reddits.json',
-            success: (response) => {
-                this.setState({ listings: response.data.children });
-            }
-        });
-    }
-
-    _getLinks(subreddit) {
-        $.ajax({
-            url: `https://www.reddit.com/r/${subreddit}.json`,
-            success: (response) => {
-                this.setState({ links: response.data.children });
-            }
-        });
-    }
-
     _onSelect(selectedId) {
-        this._getLinks(this.state.listings.find(listing => listing.data.id === selectedId ).data.display_name);
+        requestService.getLinks(this.state.listings.find(listing => listing.data.id === selectedId ).data.display_name)
+            .then((response) => {
+                this.setState({ links: response.data.children });
+            });
     }
 
     componentDidMount() {
-        this._getSubreddits();
+        requestService.getSubreddits()
+            .then((response) => {
+                this.setState({ listings: response.data.children });
+            });
     }
 
     render() {
