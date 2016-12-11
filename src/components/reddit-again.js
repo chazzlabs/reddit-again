@@ -2,6 +2,7 @@ import React from 'react';
 
 import SubredditChooser from './subreddit-chooser';
 import ThreadList from './thread-list';
+import LoadingIndicator from './loading-indicator';
 
 import { requestService } from '../services/request-service';
 
@@ -42,7 +43,7 @@ export default class RedditAgain extends React.Component {
 
         switch (this.state.bodyState) {
             case this.BODY_STATES.LOADING:
-                bodyContent = <div>Loading...</div>;
+                bodyContent = <LoadingIndicator />;
                 break;
             case this.BODY_STATES.THREAD_LIST:
                 bodyContent = <ThreadList links={this.state.links} />;
