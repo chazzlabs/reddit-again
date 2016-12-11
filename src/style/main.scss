@@ -1,7 +1,9 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 @import 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500';
+@import 'spinners/7-three-bounce';
 
 $font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+$font-family-title: 'Roboto Slab', serif;
 $font-color: #333333;
 $background-color: #e5e5e5;
 $anchor-color: #960028;
@@ -28,7 +30,7 @@ body {
         cursor: pointer;
 
         .title {
-            font-family: 'Roboto Slab', serif;
+            font-family: $font-family-title;
 
             &.sticky {
                 font-weight: bold;

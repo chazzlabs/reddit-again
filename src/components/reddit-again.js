@@ -34,7 +34,7 @@ export default class RedditAgain extends React.Component {
 
         requestService.getSubreddits()
             .then((response) => {
-                this.setState({ listings: response.data.children, bodyState: this.BODY_STATES.EMPTY });
+                this.setState({ listings: response.data.children, bodyState: this.BODY_STATES.LOADING });
             });
     }
 

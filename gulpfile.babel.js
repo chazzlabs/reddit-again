@@ -51,7 +51,7 @@ gulp.task('transpile', ['lint'], () => bundle());
 
 gulp.task('css', () => {
     return gulp.src('src/style/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({ includePaths: [ 'node_modules/spinkit/scss'] }).on('error', sass.logError))
         .pipe(autoprefixer({ browsers: ['last 2 versions'], cascasde: false }))
         .pipe(gulp.dest('dist/assets'));
 });
