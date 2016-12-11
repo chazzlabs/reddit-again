@@ -1,7 +1,7 @@
 {
-  "name": "react-boilerplate",
+  "name": "reddit-again",
   "version": "0.1.0",
-  "description": "A simple boilerplate for creating a React app quickly.",
+  "description": "A silly Reddit client built for learning React.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/chazzlabs/react-boilerplate"
+    "url": "git+ssh://git@github.com/chazzlabs/reddit-again"
   },
   "keywords": [
     "babel",
@@ -20,9 +20,9 @@
     "react"
   ],
   "bugs": {
-    "url": "https://github.com/chazzlabs/react-boilerplate/issues"
+    "url": "https://github.com/chazzlabs/reddit-again/issues"
   },
-  "homepage": "https://github.com/chazzlabs/react-boilerplate#readme",
+  "homepage": "https://github.com/chazzlabs/reddit-again#readme",
   "devDependencies": {
     "babel-core": "^6.7.6",
     "babel-preset-es2015": "^6.1.18",
