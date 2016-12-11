@@ -2,7 +2,7 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500';
 
 $font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-$font-color: #6d6d6d;
+$font-color: #333333;
 $background-color: #e5e5e5;
 $anchor-color: #960028;
 
@@ -22,7 +22,7 @@ body {
     max-width: 80em;
 
     .thread-link {
-        background-color: darken($background-color, 5%);
+        background-color: lighten($background-color, 5%);
         margin: 1.5em;
         padding: 1.5em;
         cursor: pointer;
