@@ -67,6 +67,11 @@ gulp.task('serve', ['transpile', 'html', 'css'], () => sync.init({
     host: process.env.IP || 'localhost'
 }));
 
+gulp.task('gh-pages', ['transpile', 'html', 'css'], () => {
+    return gulp.src('dist/**/*')
+        .pipe(gulp.dest('.'));
+});
+
 gulp.task('js-watch', ['transpile'], () => sync.reload());
 gulp.task('css-watch', ['css'], () => sync.reload());
 gulp.task('html-watch', ['html'], () => sync.reload());
