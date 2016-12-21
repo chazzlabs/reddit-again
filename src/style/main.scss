@@ -1,6 +1,8 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 @import 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500';
 @import 'spinners/7-three-bounce';
+
+// react-select scss
 @import 'default';
 
 $font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -8,6 +10,7 @@ $font-family-title: 'Roboto Slab', serif;
 $font-color: #333333;
 $background-color: #e5e5e5;
 $anchor-color: #960028;
+$standard-margin: 1.5em;
 
 html, body {
     margin: 0;
@@ -24,9 +27,13 @@ body {
 #reddit-again {
     max-width: 80em;
 
+    .Select, .body-empty {
+        margin: $standard-margin;
+    }
+
     .thread-link {
         background-color: lighten($background-color, 5%);
-        margin: 1.5em;
+        margin: $standard-margin;
         padding: 1.5em;
         cursor: pointer;
 

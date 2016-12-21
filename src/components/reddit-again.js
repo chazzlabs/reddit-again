@@ -53,7 +53,7 @@ export default class RedditAgain extends React.Component {
                 // bodyContent = <Thread />;
                 break;
             default:
-                bodyContent = <div>Select a subreddit from the dropdown to view its current links.</div>;
+                bodyContent = <div className="body-empty">Select a subreddit from the dropdown to view its current links.</div>;
                 break;
         }
 
