@@ -1,6 +1,6 @@
 import React from 'react';
+import Select from 'react-select';
 
-import SubredditChooser from './subreddit-chooser';
 import ThreadList from './thread-list';
 import LoadingIndicator from './loading-indicator';
 
@@ -14,16 +14,17 @@ export default class RedditAgain extends React.Component {
         this.BODY_STATES = { EMPTY: 0, LOADING: 1, THREAD_LIST: 2, THREAD: 3 };
 
         this.state = {
+            selected: undefined,
             listings: [],
             links: [],
             bodyState: this.BODY_STATES.EMPTY
         };
     }
 
-    _onSelect(selectedId) {
-        this.setState({ bodyState: this.BODY_STATES.LOADING });
+    _onSelect(selected) {
+        this.setState({ bodyState: this.BODY_STATES.LOADING, selected: selected });
 
-        requestService.getLinks(this.state.listings.find(listing => listing.data.id === selectedId ).data.display_name)
+        requestService.getLinks(this.state.listings.find(listing => listing.data.id === selected.value ).data.display_name)
             .then((response) => {
                 this.setState({ links: response.data.children, bodyState: this.BODY_STATES.THREAD_LIST });
             });
@@ -56,9 +57,18 @@ export default class RedditAgain extends React.Component {
                 break;
         }
 
+        const selectOptions = this.state.listings.map((listing) => {
+            return { value: listing.data.id, label: listing.data.display_name };
+        });
+
         return(
             <div>
-                <SubredditChooser listings={this.state.listings} onSelect={this._onSelect.bind(this)}/>
+                <Select
+                    value={ this.state.selected }
+                    options={ selectOptions }
+                    onChange={ this._onSelect.bind(this) }
+                    searchable={ true }
+                    clearable={ false } />
                 {bodyContent}
             </div>
         );
