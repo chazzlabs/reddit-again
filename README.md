@@ -4,10 +4,25 @@ This is a silly Reddit client built for learning React.
 
 # Installing and Running Locally
 
-1. Clone the repo
-2. `npm install -g gulp` to install Gulp globally.
-3. `npm install` to resolve project dependencies.
-4. `npm start` to run the local server
+#### 1. Clone the repo
+```sh
+git clone https://github.com/chazzlabs/reddit-again.git
+```
+
+#### 2. Install gulp-cli globally
+```sh
+npm install -g gulp
+```
+
+#### 3. Resolve project dependencies.
+ ```sh
+ npm install
+ ```
+ 
+#### 4. Run the local server
+```sh
+npm start
+```
 
 # View the demo
 
