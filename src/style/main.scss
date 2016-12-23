@@ -32,10 +32,13 @@ body {
     }
 
     .thread-link {
+        cursor: pointer;
+    }
+
+    .thread-link, .thread {
         background-color: lighten($background-color, 5%);
         margin: $standard-margin;
         padding: 1.5em;
-        cursor: pointer;
 
         .title {
             font-family: $font-family-title;

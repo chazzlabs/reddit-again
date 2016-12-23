@@ -2,6 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 
 import ThreadList from './thread-list';
+import Thread from './thread';
 import LoadingIndicator from './loading-indicator';
 
 import { requestService } from '../services/request-service';
@@ -17,17 +18,22 @@ export default class RedditAgain extends React.Component {
             selected: undefined,
             listings: [],
             links: [],
+            thread: undefined,
             bodyState: this.BODY_STATES.EMPTY
         };
     }
 
-    _onSelect(selected) {
+    _onListingSelect(selected) {
         this.setState({ bodyState: this.BODY_STATES.LOADING, selected: selected });
 
         requestService.getLinks(this.state.listings.find(listing => listing.data.id === selected.value ).data.display_name)
             .then((response) => {
                 this.setState({ links: response.data.children, bodyState: this.BODY_STATES.THREAD_LIST });
             });
+    }
+
+    _onLinkClick(link) {
+        this.setState({ thread: link, bodyState: this.BODY_STATES.THREAD });
     }
 
     componentDidMount() {
@@ -47,10 +53,10 @@ export default class RedditAgain extends React.Component {
                 bodyContent = <LoadingIndicator />;
                 break;
             case this.BODY_STATES.THREAD_LIST:
-                bodyContent = <ThreadList links={this.state.links} />;
+                bodyContent = <ThreadList links={this.state.links} onLinkClick={ this._onLinkClick.bind(this) } />;
                 break;
             case this.BODY_STATES.THREAD:
-                // bodyContent = <Thread />;
+                bodyContent = <Thread link={ this.state.thread }/>;
                 break;
             default:
                 bodyContent = <div className="body-empty">Select a subreddit from the dropdown to view its current links.</div>;
@@ -66,7 +72,7 @@ export default class RedditAgain extends React.Component {
                 <Select
                     value={ this.state.selected }
                     options={ selectOptions }
-                    onChange={ this._onSelect.bind(this) }
+                    onChange={ this._onListingSelect.bind(this) }
                     searchable={ true }
                     clearable={ false } />
                 {bodyContent}

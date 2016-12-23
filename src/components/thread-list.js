@@ -7,7 +7,7 @@ export default class ThreadList extends React.Component {
     render() {
         return(
             <div>
-                {this.props.links.map(link => <ThreadLink key={link.data.id} link={link} />)}
+                {this.props.links.map(link => <ThreadLink key={link.data.id} link={link} onLinkClick={ this.props.onLinkClick } />)}
             </div>
         );
     }

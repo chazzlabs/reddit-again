@@ -9,6 +9,10 @@ class RequestService {
     getLinks(subreddit) {
         return $.ajax(`https://www.reddit.com/r/${subreddit}.json`);
     }
+
+    getThread(threadUrl) {
+        return $.ajax(`${threadUrl}.json`);
+    }
 }
 
 export const requestService = new RequestService();
