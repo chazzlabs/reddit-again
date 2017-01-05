@@ -11,7 +11,7 @@ git clone https://github.com/chazzlabs/reddit-again.git
 
 #### 2. Install gulp-cli globally
 ```sh
-npm install -g gulp
+npm install -g gulp-cli
 ```
 
 #### 3. Resolve project dependencies.
