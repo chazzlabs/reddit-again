@@ -53,7 +53,7 @@ export default class RedditAgain extends React.Component {
                 bodyContent = <LoadingIndicator />;
                 break;
             case this.BODY_STATES.THREAD_LIST:
-                bodyContent = <ThreadList links={this.state.links} onLinkClick={ this._onLinkClick.bind(this) } />;
+                bodyContent = <ThreadList links={ this.state.links } onLinkClick={ this._onLinkClick.bind(this) } />;
                 break;
             case this.BODY_STATES.THREAD:
                 bodyContent = <Thread link={ this.state.thread }/>;
@@ -63,9 +63,17 @@ export default class RedditAgain extends React.Component {
                 break;
         }
 
-        const selectOptions = this.state.listings.map((listing) => {
-            return { value: listing.data.id, label: listing.data.display_name };
-        });
+        const selectOptions = this.state.listings
+            .map((listing) => {
+                return { value: listing.data.id, label: listing.data.display_name };
+            })
+            .sort((a,b) => {
+                if (a.label.toLowerCase() < b.label.toLowerCase())
+                    return -1;
+                if (a.label.toLowerCase() > b.label.toLowerCase())
+                    return 1;
+                return 0;
+            });
 
         return(
             <div>
