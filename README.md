@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/chazzlabs/reddit-again.svg?branch=master)](https://travis-ci.org/chazzlabs/reddit-again)
+
 [ ![Codeship Status for chazzlabs/reddit-again](https://app.codeship.com/projects/d5117ff0-daa6-0134-9999-7aec9005d4ad/status?branch=master)](https://app.codeship.com/projects/203760)
 
 # Reddit Again
