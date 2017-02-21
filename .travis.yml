@@ -8,7 +8,7 @@ node_js:
 addons:
     sonarqube:
         token:
-            secure: 'something'
+            secure: $SONAR_TOKEN
 install:
     - npm install
 script:
