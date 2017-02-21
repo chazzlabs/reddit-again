@@ -1,18 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
+import { shallow } from 'enzyme';
 import LoadingIndicator from '../../src/components/loading-indicator';
 
 describe('Loading Inidicator component', () => {
-    let loadingIndicatorNode;
+    let LoadingIndicatorWrapper;
 
     beforeEach(() => {
-        const loadingIndicator = TestUtils.renderIntoDocument(<LoadingIndicator />);
-        loadingIndicatorNode = ReactDOM.findDOMNode(loadingIndicator);
+        LoadingIndicatorWrapper = shallow(
+            <LoadingIndicator requiredProp="Test message" />
+        );
     });
 
     it('should not be empty', () => {
-        expect(loadingIndicatorNode.childNodes.length).not.toBe(0);
+        expect(LoadingIndicatorWrapper.children().length).not.toBe(0);
     });
 
 });
