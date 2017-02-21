@@ -3,22 +3,22 @@ sudo: required
 
 language: node_js
 node_js:
-  - 6
+    - 6
 
 addons:
-  sonarqube: {}
-jdk:
-  - oraclejdk8
+    sonarqube:
+        token:
+            secure: 'something'
 install:
-  - npm install
+    - npm install
 script:
-  - npm run sonar
-  - sonar-scanner
+    - npm run sonar
+    - sonar-scanner
 cache:
-  directories:
-    - '$HOME/.sonar/cache'
+    directories:
+        - '$HOME/.sonar/cache'
 notifications:
-  email:
-    recipients:
-      - cslabas@gmail.com
-      on_success: always
+    email:
+        recipients:
+            - cslabas@gmail.com
+        on_success: always
