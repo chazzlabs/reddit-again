@@ -1,3 +1,5 @@
+[ ![Codeship Status for chazzlabs/reddit-again](https://app.codeship.com/projects/d5117ff0-daa6-0134-9999-7aec9005d4ad/status?branch=master)](https://app.codeship.com/projects/203760)
+
 # Reddit Again
 
 This is a silly Reddit client built for learning React.
@@ -18,7 +20,7 @@ npm install -g gulp-cli
  ```sh
  npm install
  ```
- 
+
 #### 4. Run the local server
 ```sh
 npm start
