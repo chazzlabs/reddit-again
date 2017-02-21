@@ -1,0 +1,24 @@
+dist: trusty
+sudo: required
+
+language: node_js
+node_js:
+  - 6
+
+addons:
+  - sonarqube
+jdk:
+  - oraclejdk8
+install:
+  - npm install
+script:
+  - npm run sonar
+  - sonar-scanner
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
+notifications:
+  email:
+    recipients:
+      - cslabas@gmail.com
+      on_success: always
