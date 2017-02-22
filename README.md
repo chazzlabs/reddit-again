@@ -6,6 +6,8 @@
 
 [![CircleCI](https://circleci.com/gh/chazzlabs/reddit-again.svg?style=svg)](https://circleci.com/gh/chazzlabs/reddit-again)
 
+[![buddy pipeline](https://app.buddy.works/cslabas/reddit-again/pipelines/pipeline/44648/badge.svg?token=d5313ad1e65ffc3f835748c3094d711a40343dcb987f263dfe8fae12113a5975 "buddy pipeline")](https://app.buddy.works/cslabas/reddit-again/pipelines/pipeline/44648)
+
 # Reddit Again
 
 This is a silly Reddit client built for learning React.
