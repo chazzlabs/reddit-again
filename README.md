@@ -4,6 +4,8 @@
 
 [![Run Status](https://api.shippable.com/projects/58ad955d8ea4d4100046165b/badge?branch=master)](https://app.shippable.com/projects/58ad955d8ea4d4100046165b)
 
+[![CircleCI](https://circleci.com/gh/chazzlabs/reddit-again.svg?style=svg)](https://circleci.com/gh/chazzlabs/reddit-again)
+
 # Reddit Again
 
 This is a silly Reddit client built for learning React.
