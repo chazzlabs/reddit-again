@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+    - 6.9.3
+build:
+    ci:
+        - npm install
+        - npm test
+integrations:
+    notifications:
+        - integrationName: email
+            type: email
+            recipients:
+                - cslabas@gmail.com
+            branches:
+                only:
+                    - master
+                    - gh-pages
+            on_success: always
+            on_failure: always

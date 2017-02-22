@@ -2,6 +2,8 @@
 
 [ ![Codeship Status for chazzlabs/reddit-again](https://app.codeship.com/projects/d5117ff0-daa6-0134-9999-7aec9005d4ad/status?branch=master)](https://app.codeship.com/projects/203760)
 
+[![Run Status](https://api.shippable.com/projects/58ad955d8ea4d4100046165b/badge?branch=master)](https://app.shippable.com/projects/58ad955d8ea4d4100046165b)
+
 # Reddit Again
 
 This is a silly Reddit client built for learning React.
