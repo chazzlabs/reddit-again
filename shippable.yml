@@ -11,9 +11,9 @@ integrations:
     type: email
     recipients:
       - cslabas@gmail.com
-      branches:
-      only:
-        - master
-        - gh-pages
-      on_success: always
-      on_failure: always
+    branches:
+    only:
+      - master
+      - gh-pages
+    on_success: always
+    on_failure: always
